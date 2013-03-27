@@ -1,13 +1,18 @@
 // Dimensions en mm
-hauteur = 11;
+hauteur = 5;
+epaisseur=3;
+offset = 2; // pour bien transpercer
 nombre_trous = 10;
+diametre_min = 1;
 
-$fn=100; //resolution
+longueur=nombre_trous*(nombre_trous+1)/2;
 
+$fn=40; //resolution
+
+for (diametre = [diametre_min:nombre_trous]){
+translate([((diametre+epaisseur)*(diametre+epaisseur+1)/2-diametre/2), 0, 0])
 difference(){
-cube([110,hauteur,hauteur], center=true);
-for (x = [1:nombre_trous]){
-translate([(x-5.5)*10, 0, 0])
-cylinder(h=20,r=x/2,center = true);
+cylinder(h=hauteur,r=(diametre/2)+epaisseur);
+cylinder(h=hauteur+offset,r=diametre/2);
 }
 }
