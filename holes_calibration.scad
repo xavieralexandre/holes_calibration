@@ -1,6 +1,6 @@
 // Dimensions en mm
-hauteur = 5;
-epaisseur=3;
+hauteur = 4;
+epaisseur=2;
 offset = 2; // pour bien transpercer
 nombre_trous = 10;
 diametre_min = 1;
