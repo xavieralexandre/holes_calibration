@@ -10,9 +10,9 @@ longueur=nombre_trous*(nombre_trous+1)/2;
 $fn=100; //resolution
 
 for (diametre = [diametre_min:nombre_trous]){
-translate([((diametre+epaisseur)*(diametre+epaisseur+1)/2-diametre/2), 0, 0])
-difference(){
-cylinder(h=hauteur,r=(diametre/2)+epaisseur);
-cylinder(h=hauteur+offset,r=diametre/2);
+	translate([((diametre+epaisseur)*(diametre+		epaisseur+1)/2-diametre/2), 0, 0])
+	difference(){
+	cylinder(h=hauteur,r=(diametre/2)+epaisseur);
+	cylinder(h=hauteur+offset,r=diametre/2);
 }
 }
